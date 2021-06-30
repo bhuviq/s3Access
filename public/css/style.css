@@ -7,6 +7,10 @@ a {
     color: #00B7FF;
 }
 
+.text-basic {
+    color: #00B7FF;
+}
+
 footer {
     width: 100%;
     height: 50px;
@@ -15,4 +19,16 @@ footer {
     position: absolute;
     bottom: 0;
     font-size: 12px;
+}
+
+.login-row {
+    height: calc(100vh - 50px);
+}
+
+.login-box {
+    padding: 20px;
+    height: 320px;
+    border-radius: 10%;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
 }

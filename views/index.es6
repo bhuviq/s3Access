@@ -1,42 +1,21 @@
-const Layout = require('es6views').Layout;
+const Layout = require('./layout.es6');
 
 class IndexLayout extends Layout {
 
-    parse() {
-
-        this._markup = `<!DOCTYPE html>
-        <html lang="en">
-            ${this.head()}
-            <body>
-                ${this.header()}
-                ${this.content()}
-                ${this.footer()}
-            </body>
-        </html>`;
-    }
-
-    head() {
-
-        const data    = this._data
-
-        return `<!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <title>${data.pageTitle}</title>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
-            <link rel="stylesheet" href="/css/bootstrap.min.css">
-            <link rel="stylesheet" href="/css/bootstrap-robot.min.css">
-            <link rel="stylesheet" href="/css/style.css">
-        </head>
-        <body>`;
-
-    }
-
     header() {
 
-        return ``;
+        const data = this._data;
+
+        return `<header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+                <a class="navbar-brand" href="#">${data.pageTitle}</a>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/logout"> Logout </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>`;
     }
 
     content() {
@@ -44,23 +23,23 @@ class IndexLayout extends Layout {
         return ``;
     }
 
-    footer() {
-
-        const data = this._data;
-
-        return `<footer>
-            <div class="row">
-                <div class="col-4">
-                    Developed By: <a href="https://github.com/bhuviq" target="_blank">Bhuvi</a>
-                </div>
-                <div class="col-4 text-center">
-                    ${data.pageTitle}
-                </div>
-                <div class="col-4 text-right">
-                    Copyright &copy; ${(new Date()).getFullYear()}
-                </div>
-            </div>
-        </footer>`;
+    scripts() {
+        return `<script>
+            document.addEventListener("DOMContentLoaded", function(){
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        document.getElementById('navbar_top').classList.add('fixed-top');
+                        // add padding top to show content behind navbar
+                        navbar_height = document.querySelector('.navbar').offsetHeight;
+                        document.body.style.paddingTop = navbar_height + 'px';
+                    } else {
+                        document.getElementById('navbar_top').classList.remove('fixed-top');
+                        // remove padding top from body
+                        document.body.style.paddingTop = '0';
+                    } 
+                });
+            });
+        </script>`
     }
 
 }
