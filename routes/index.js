@@ -1,11 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+
+const s3 = require('../modules/s3');
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
 
-    res.render('index', { pageTitle: 'S3 Access' });
+    const result = await s3.getAllBuckets(req.session.creds);
+    res.render('index', { pageTitle: 'S3 Access', result, listOf: 'Buckets' });
 });
+
+router.get('/bucket/:bucketName', async (req, res) => {
+
+    let bucketName = req.params.bucketName;
+    const result = await s3.getAllFiles(req.session.creds, bucketName);
+    res.render('index', { pageTitle: 'S3 Access', result, listOf: 'files' });
+})
 
 router.get('/auth', (req, res, next) => {
 

@@ -16,9 +16,10 @@ footer {
     height: 50px;
     padding: 18px 0;
     box-shadow: 3px 3px 5px 6px #ccc;
-    position: absolute;
+    position: sticky;
     bottom: 0;
     font-size: 12px;
+    background-color: white;
 }
 
 .login-row {
@@ -31,4 +32,17 @@ footer {
     border-radius: 10%;
     border: 1px solid #9C9C9C;
     background-color: #EAEAEA;
+}
+
+.card-body {
+    position: relative;
+}
+
+.downloadButton {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.content-list a {
+    text-decoration: none;
 }

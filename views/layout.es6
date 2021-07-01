@@ -9,7 +9,9 @@ class BaseLayout extends Layout {
             ${this.head()}
             <body>
                 ${this.header()}
-                ${this.content()}
+                <div class="mb-4">
+                    ${this.content()}
+                </div>
                 ${this.footer()}
                 ${this.scripts()}
             </body>
@@ -29,6 +31,7 @@ class BaseLayout extends Layout {
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
             <link rel="stylesheet" href="/css/bootstrap.min.css">
             <link rel="stylesheet" href="/css/style.css">
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
         </head>
         <body>`;
 

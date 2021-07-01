@@ -1,4 +1,5 @@
 const Layout = require('./layout.es6');
+const moment = require('moment');
 
 class IndexLayout extends Layout {
 
@@ -8,7 +9,7 @@ class IndexLayout extends Layout {
 
         return `<header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-                <a class="navbar-brand" href="#">${data.pageTitle}</a>
+                <a class="navbar-brand" href="javascript:void(0);">${data.pageTitle}</a>
                 <div class="collapse navbar-collapse justify-content-end">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="/logout"> Logout </a></li>
@@ -20,7 +21,64 @@ class IndexLayout extends Layout {
 
     content() {
 
-        return ``;
+        const data = this._data;
+        let result = data.result;
+
+        let markup = result.map(singleData => {
+
+            let html = ``;
+
+            if (data.listOf == 'files') {
+
+                html = `<div class="col-3 py-2">
+                    <div class="card text-info">
+                        <div class="card-body">
+                            <i class="fa fa-box-open card-img-top display-2"></i>
+                            <p>${singleData.Key}</p>
+                            <button type="button" class="btn btn-sm btn-info downloadButton">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="card-footer text-right">
+                            <span>${moment(singleData.LastModified).format('DD MMM, YYYY HH:mm')}</span>
+                        </div>
+                    </div>
+                </div>`;
+            }
+            else {
+                html = `<div class="col-3 py-2">
+                    <a href="/bucket/${singleData.Name}">
+                        <div class="card text-info">
+                            <div class="card-body">
+                                <i class="fa fa-box-open card-img-top display-2"></i>
+                                <p>${singleData.Name}</p>
+                            </div>
+                            <div class="card-footer text-right">
+                                <span>${moment(singleData.CreationDate).format(`DD MMM, YYYY`)}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>`;
+            }
+
+            return html;
+        }).join('');
+
+        return `
+        <div class="row">
+            <div class="col-12 mx-auto text-center display-6 text-info content-list">
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <p class="h5">${data.listOf}</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            ${markup}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
     }
 
     scripts() {
@@ -39,6 +97,10 @@ class IndexLayout extends Layout {
                     } 
                 });
             });
+
+            document.addEventListener('click', (event) => {
+                console.log(event.target)
+            })
         </script>`
     }
 

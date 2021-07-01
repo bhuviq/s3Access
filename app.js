@@ -51,6 +51,7 @@ app.use((req, res, next) => {
 
 
 app.get('/', indexRouter);
+app.get('/bucket/:bucketName', indexRouter);
 app.get('/logout', indexRouter);
 
 module.exports = app;
