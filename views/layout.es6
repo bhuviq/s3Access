@@ -9,7 +9,7 @@ class BaseLayout extends Layout {
             ${this.head()}
             <body>
                 ${this.header()}
-                <div class="mb-4">
+                <div class="main-content">
                     ${this.content()}
                 </div>
                 ${this.footer()}

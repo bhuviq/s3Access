@@ -1,20 +1,34 @@
 const express = require('express');
 const router = express.Router();
-
-const s3 = require('../modules/s3');
+const controller = require('../controller');
 
 /* GET home page. */
 router.get('/', async (req, res, next) => {
 
-    const result = await s3.getAllBuckets(req.session.creds);
-    res.render('index', { pageTitle: 'S3 Access', result, listOf: 'Buckets' });
+    let data = await controller.bucketList(req.session.creds);
+
+    res.render('index', data);
 });
 
 router.get('/bucket/:bucketName', async (req, res) => {
 
     let bucketName = req.params.bucketName;
-    const result = await s3.getAllFiles(req.session.creds, bucketName);
-    res.render('index', { pageTitle: 'S3 Access', result, listOf: 'files' });
+    let {q: prefix} = req.query;
+
+    let data = await controller.getIndexData(req.session.creds, bucketName, prefix);
+
+    res.render('index', data);
+})
+
+router.get('/download/:bucketName', async (req, res) => {
+
+    let {bucketName} = req.params;
+    let {q: filePath} = req.query;
+
+    let link = await controller.getFileLink(req.session.creds, bucketName, filePath);
+
+    res.redirect(link);
+
 })
 
 router.get('/auth', (req, res, next) => {
@@ -35,7 +49,9 @@ router.post('/auth', (req, res, next) => {
     };
     req.session.save();
 
-    res.redirect('/');
+    let redirectPath = req.session.redirectPath || '/';
+    res.redirect(redirectPath);
+
 });
 
 router.get('/logout', (req, res) => {

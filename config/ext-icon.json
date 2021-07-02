@@ -1,0 +1,110 @@
+[
+    {
+        "ext": ".pdf",
+        "icon": "fa-file-pdf-o text-danger"
+    },
+    {
+        "ext": ".jpg",
+        "icon": "fa-file-image-o text-secondary"
+    },
+    {
+        "ext": ".jpeg",
+        "icon": "fa-file-image-o text-secondary"
+    },
+    {
+        "ext": ".png",
+        "icon": "fa-file-image-o text-secondary"
+    },
+    {
+        "ext": ".svg",
+        "icon": "fa-file-image-o text-secondary"
+    },
+    {
+        "ext": ".csv",
+        "icon": "fa-file-excel-o text-success"
+    },
+    {
+        "ext": ".xlsx",
+        "icon": "fa-file-excel-o text-success"
+    },
+    {
+        "ext": ".xls",
+        "icon": "fa-file-excel-o text-success"
+    },
+    {
+        "ext": ".zip",
+        "icon": "fa-file-zip-o"
+    },
+    {
+        "ext": ".rar",
+        "icon": "fa-file-zip-o"
+    },
+    {
+        "ext": ".txt",
+        "icon": "fa-file-text-o"
+    },
+    {
+        "ext": ".ppt",
+        "icon": "fa-file-powerpoint-o text-danger"
+    },
+    {
+        "ext": ".pptx",
+        "icon": "fa-file-powerpoint-o text-danger"
+    },
+    {
+        "ext": ".doc",
+        "icon": "fa-file-word-o text-primary"
+    },
+    {
+        "ext": ".docx",
+        "icon": "fa-file-word-o text-primary"
+    },
+    {
+        "ext": ".html",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".htm",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".js",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".css",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".less",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".scss",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".json",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".php",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".py",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".java",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".c",
+        "icon": "fa-file-code-o text-warning"
+    },
+    {
+        "ext": ".cpp",
+        "icon": "fa-file-code-o text-warning"
+    }
+]

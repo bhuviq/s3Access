@@ -25,13 +25,13 @@ const getAllBuckets = (creds) => {
     }
     catch (error) {
 
-        console.error(error);
+        console.error(_line, error);
         return Promise.reject(error);
     }
 }
 
 
-const getAllFiles = (creds, myBucket, filePath='', StartAfter=false) => {
+const getAllFiles = (creds, myBucket, prefix='', StartAfter=false) => {
 
     try {
 
@@ -41,7 +41,7 @@ const getAllFiles = (creds, myBucket, filePath='', StartAfter=false) => {
     
             let obj = {
                 Bucket: myBucket,
-                Prefix: filePath
+                Prefix: prefix
             }
 
             if (StartAfter) {
@@ -68,12 +68,45 @@ const getAllFiles = (creds, myBucket, filePath='', StartAfter=false) => {
     }
     catch (error) {
 
-        console.error(error);
+        console.error(_line, error);
         return Promise.reject(error);
     }
 }
 
+const getFileLink = (creds, myBucket, filePath='', minutes = 1) => {
+
+    try {
+
+        s3.config.update({accessKeyId: creds.key, secretAccessKey: creds.secret})
+
+        const signedUrlExpireSeconds = 60 * minutes;
+    
+        return new Promise((resolve, reject) => {
+    
+            s3.getSignedUrl('getObject', {
+                Bucket: myBucket,
+                Key: filePath,
+                Expires: signedUrlExpireSeconds
+            }, (err, result) => {
+
+                if (err)
+                    return reject(err)
+
+                resolve(result);
+            })
+        })
+
+    }
+    catch (error) {
+
+        console.error(_line, error);
+        return Promise.reject(error);
+    }
+
+}
+
 module.exports = {
     getAllBuckets,
-    getAllFiles
+    getAllFiles,
+    getFileLink
 }

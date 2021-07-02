@@ -13,8 +13,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const viewEngine = (new require("es6views").viewEngine)(app)
-console.log(__dirname + '/views');
+Object.defineProperty(global, '_line', {
+    get: function(){
+        return ((new Error()).stack.split("\n")[2].trim().replace(/^(at\s?)(.*)/gim, "$2 >").replace(__dirname, ""))
+    }
+});
+
+const viewEngine = (new require("es6views").viewEngine)(app);
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'es6');
 
@@ -38,7 +44,11 @@ app.use((req, res, next) => {
 
 
         if(!req.session.hasOwnProperty("creds")) {
-        	return res.redirect('/auth');
+
+            req.session.redirectPath = req.path;
+            req.session.save();
+
+            return res.redirect('/auth');
         }
 
         next();
@@ -52,6 +62,7 @@ app.use((req, res, next) => {
 
 app.get('/', indexRouter);
 app.get('/bucket/:bucketName', indexRouter);
+app.get('/download/:bucketName', indexRouter);
 app.get('/logout', indexRouter);
 
 module.exports = app;

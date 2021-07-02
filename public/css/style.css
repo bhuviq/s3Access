@@ -16,7 +16,7 @@ footer {
     height: 50px;
     padding: 18px 0;
     box-shadow: 3px 3px 5px 6px #ccc;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     font-size: 12px;
     background-color: white;
@@ -42,6 +42,10 @@ footer {
     position: absolute;
     top: 8px;
     right: 8px;
+}
+
+.main-content {
+    margin-bottom: calc(1.5rem + 50px);
 }
 .content-list a {
     text-decoration: none;
