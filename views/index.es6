@@ -12,11 +12,9 @@ class IndexLayout extends Layout {
         return `<header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-info" id="navbar_top">
                 <a class="navbar-brand" href="javascript:void(0);">${data.pageTitle}</a>
-                <div class="collapse navbar-collapse justify-content-end">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="/logout"> Logout </a></li>
-                    </ul>
-                </div>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/logout"> Logout </a></li>
+                </ul>
             </nav>
         </header>`;
     }
@@ -32,7 +30,7 @@ class IndexLayout extends Layout {
 
             if (data.listOf == 'Buckets') {
 
-                html = `<div class="col-3 py-2">
+                html = `<div class="col-md-3 col-sm-6 col-xs-12 py-2">
                     <a href="/bucket/${singleData.Name}">
                         <div class="card text-info">
                             <div class="card-body">
@@ -50,7 +48,7 @@ class IndexLayout extends Layout {
 
                 if (singleData.isFolder) {
 
-                    html = `<div class="col-3 py-2">
+                    html = `<div class="col-md-3 col-sm-6 col-xs-12 py-2">
                         <a href="/bucket/${data.bucket}?q=${data.prefix || ''}${singleData.Key}">
                             <div class="card text-info">
                                 <div class="card-body">
@@ -73,7 +71,7 @@ class IndexLayout extends Layout {
 
                     let icon = iconObj ? iconObj.icon : 'fa-file';
 
-                    html = `<div class="col-3 py-2">
+                    html = `<div class="col-md-3 col-sm-6 col-xs-12 py-2">
                         <div class="card text-info">
                             <div class="card-body">
                                 <i class="fa ${icon} card-img-top display-2"></i>

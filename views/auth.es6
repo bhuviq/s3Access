@@ -5,7 +5,7 @@ class AuthLayout extends Layout {
     content() {
 
         return `<div class="row align-items-center login-row">
-            <div class="col-sm-4 mx-auto">
+            <div class="col-md-4 col-sm-6 col-xs-12 mx-auto">
                 <h2 class="text-center text-secondary">Connect to Amazon S3</h2>
                 <div class="login-box">
                     <form class="form" method="post">
