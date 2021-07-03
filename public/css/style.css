@@ -23,7 +23,7 @@ footer {
 }
 
 .login-row {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 1.5rem - 50px);
 }
 
 .login-box {
