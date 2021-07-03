@@ -127,9 +127,6 @@ class IndexLayout extends Layout {
                 });
             });
 
-            document.addEventListener('click', (event) => {
-                console.log(event.target)
-            })
         </script>`
     }
 

@@ -54,10 +54,9 @@ const getAllFiles = (creds, myBucket, prefix='', StartAfter=false) => {
                 if (err)
                     return reject(err)
     
-                console.log(`${JSON.stringify(result)}`)
                 finalResult = [...finalResult, ...result.Contents];
                 let contentLength = result.Contents.length;
-                console.log('total length: ',contentLength);
+
                 // if (result.KeyCount < 1000) {
                     return resolve(finalResult);
                 // }
