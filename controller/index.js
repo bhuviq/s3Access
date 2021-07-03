@@ -4,16 +4,12 @@ const getIndexData = async (creds, bucketName = "", prefix = "") => {
 
     try {
 
-        console.log(_line, creds);
-        console.log(_line, bucketName);
-        console.log(_line, prefix);
         if (prefix && String(prefix).trim().length && prefix.charAt(prefix.length - 1) != "/") {
             prefix += "/"
         }
 
         let result = await s3.getAllFiles(creds, bucketName, prefix);
 
-        console.log(_line, result);
         result = result.map(data => {
 
             data.original = data.Key;
@@ -34,8 +30,6 @@ const getIndexData = async (creds, bucketName = "", prefix = "") => {
         .map(item => {
             return result.find(data => data.Key == item);
         });
-
-        console.log(_line, uniqueResult);
 
         return {
             pageTitle: 'S3 Access',
