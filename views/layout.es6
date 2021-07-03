@@ -27,6 +27,7 @@ class BaseLayout extends Layout {
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${data.pageTitle}</title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700">
             <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -57,13 +58,13 @@ class BaseLayout extends Layout {
 
         return `<footer>
             <div class="row">
-                <div class="col-4">
+                <div class="col-5 col-sm-4">
                     Developed By: <a href="https://github.com/bhuviq" target="_blank">Bhuvi</a>
                 </div>
-                <div class="col-4 text-center">
+                <div class="col-2 col-sm-4 text-center">
                     ${data.pageTitle}
                 </div>
-                <div class="col-4 text-right">
+                <div class="col-5 col-sm-4 text-right">
                     Copyright &copy; ${(new Date()).getFullYear()}
                 </div>
             </div>
