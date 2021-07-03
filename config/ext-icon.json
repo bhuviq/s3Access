@@ -1,110 +1,110 @@
 [
     {
         "ext": ".pdf",
-        "icon": "fa-file-pdf-o text-danger"
+        "icon": "fa-file-pdf text-danger"
     },
     {
         "ext": ".jpg",
-        "icon": "fa-file-image-o text-secondary"
+        "icon": "fa-file-image text-secondary"
     },
     {
         "ext": ".jpeg",
-        "icon": "fa-file-image-o text-secondary"
+        "icon": "fa-file-image text-secondary"
     },
     {
         "ext": ".png",
-        "icon": "fa-file-image-o text-secondary"
+        "icon": "fa-file-image text-secondary"
     },
     {
         "ext": ".svg",
-        "icon": "fa-file-image-o text-secondary"
+        "icon": "fa-file-image text-secondary"
     },
     {
         "ext": ".csv",
-        "icon": "fa-file-excel-o text-success"
+        "icon": "fa-file-csv text-success"
     },
     {
         "ext": ".xlsx",
-        "icon": "fa-file-excel-o text-success"
+        "icon": "fa-file-excel text-success"
     },
     {
         "ext": ".xls",
-        "icon": "fa-file-excel-o text-success"
+        "icon": "fa-file-excel text-success"
     },
     {
         "ext": ".zip",
-        "icon": "fa-file-zip-o"
+        "icon": "fa-file-archive"
     },
     {
         "ext": ".rar",
-        "icon": "fa-file-zip-o"
+        "icon": "fa-file-archive"
     },
     {
         "ext": ".txt",
-        "icon": "fa-file-text-o"
+        "icon": "fa-file-text"
     },
     {
         "ext": ".ppt",
-        "icon": "fa-file-powerpoint-o text-danger"
+        "icon": "fa-file-powerpoint text-danger"
     },
     {
         "ext": ".pptx",
-        "icon": "fa-file-powerpoint-o text-danger"
+        "icon": "fa-file-powerpoint text-danger"
     },
     {
         "ext": ".doc",
-        "icon": "fa-file-word-o text-primary"
+        "icon": "fa-file-word text-primary"
     },
     {
         "ext": ".docx",
-        "icon": "fa-file-word-o text-primary"
+        "icon": "fa-file-word text-primary"
     },
     {
         "ext": ".html",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".htm",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".js",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".css",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".less",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".scss",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".json",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".php",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".py",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".java",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".c",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     },
     {
         "ext": ".cpp",
-        "icon": "fa-file-code-o text-warning"
+        "icon": "fa-file-code text-warning"
     }
 ]

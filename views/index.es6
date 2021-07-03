@@ -71,7 +71,7 @@ class IndexLayout extends Layout {
 
                     let iconObj = popularFileTypes.find(item => `.${ext}` == item.ext);
 
-                    let icon = iconObj ? iconObj.icon : 'fa-file-o';
+                    let icon = iconObj ? iconObj.icon : 'fa-file';
 
                     html = `<div class="col-3 py-2">
                         <div class="card text-info">
