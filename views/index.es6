@@ -91,8 +91,25 @@ class IndexLayout extends Layout {
             return html;
         }).join('');
 
+        let directDownloadMarkup = data.listOf == 'Buckets' ? `` : `
+        <div class="col-12 mx-auto text-right">
+            <form action="/download/${data.bucket}" id="direct-download-form">
+                <div class="input-group mt-4">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Download File Directly</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="File Path"/>
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit">Download</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        `;
+
         return `
         <div class="row">
+            ${directDownloadMarkup}
             <div class="col-12 mx-auto text-center display-6 text-info content-list">
                 <div class="card mt-4">
                     <div class="card-header">
@@ -124,6 +141,14 @@ class IndexLayout extends Layout {
                     } 
                 });
             });
+
+            let form = document.querySelector('#direct-download-form');
+            if (form) {
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    window.open(event.target.action+'?q='+event.target[0].value);
+                })
+            }
 
         </script>`
     }
