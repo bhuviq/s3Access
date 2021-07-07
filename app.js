@@ -45,9 +45,6 @@ app.use((req, res, next) => {
 
         if(!req.session.hasOwnProperty("creds")) {
 
-            req.session.redirectPath = req.path;
-            req.session.save();
-
             return res.redirect('/auth');
         }
 

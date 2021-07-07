@@ -49,7 +49,7 @@ router.post('/auth', (req, res, next) => {
     };
     req.session.save();
 
-    let redirectPath = req.session.redirectPath || '/';
+    let redirectPath = '/';
     res.redirect(redirectPath);
 
 });
